@@ -1,0 +1,95 @@
+{
+    "type": "bundle",
+    "id": "bundle--example",
+    "objects": [
+        {
+            "type": "attack-pattern",
+            "id": "attack-pattern--t1059",
+            "name": "Command and Scripting Interpreter",
+            "external_references": [
+                {
+                    "source_name": "mitre-attack",
+                    "external_id": "T1059"
+                }
+            ],
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "mitre-attack",
+                    "phase_name": "execution"
+                }
+            ]
+        },
+        {
+            "type": "attack-pattern",
+            "id": "attack-pattern--t1190",
+            "name": "Exploit Public-Facing Application",
+            "external_references": [
+                {
+                    "source_name": "mitre-attack",
+                    "external_id": "T1190"
+                }
+            ],
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "mitre-attack",
+                    "phase_name": "initial-access"
+                }
+            ]
+        },
+        {
+            "type": "attack-pattern",
+            "id": "attack-pattern--t1547",
+            "name": "Boot or Logon Autostart Execution",
+            "external_references": [
+                {
+                    "source_name": "mitre-attack",
+                    "external_id": "T1547"
+                }
+            ],
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "mitre-attack",
+                    "phase_name": "persistence"
+                }
+            ]
+        },
+        {
+            "type": "attack-pattern",
+            "id": "attack-pattern--t1566",
+            "name": "Phishing",
+            "external_references": [
+                {
+                    "source_name": "mitre-attack",
+                    "external_id": "T1566"
+                }
+            ],
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "mitre-attack",
+                    "phase_name": "initial-access"
+                }
+            ]
+        },
+        {
+            "type": "relationship",
+            "id": "relationship--1",
+            "source_ref": "attack-pattern--t1566",
+            "target_ref": "attack-pattern--t1190",
+            "relationship_type": "uses"
+        },
+        {
+            "type": "relationship",
+            "id": "relationship--2",
+            "source_ref": "attack-pattern--t1190",
+            "target_ref": "attack-pattern--t1059",
+            "relationship_type": "leads-to"
+        },
+        {
+            "type": "relationship",
+            "id": "relationship--3",
+            "source_ref": "attack-pattern--t1059",
+            "target_ref": "attack-pattern--t1547",
+            "relationship_type": "enables"
+        }
+    ]
+}
